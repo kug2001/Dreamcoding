@@ -7,8 +7,11 @@
     --color-white: #ffffff;
     --color-darkpink: #d86d6d;
     --color-skyblue: skyblue;
-    --color-darkgray: darkgray;
+    --color-darkgrey: darkgrey;
     --color-lightblue: lightblue;
+    --color-grey: grey;
+    --color-lightgrey: lightgrey;
+    --color-orange: orange;
     /* Font Size  */
     --font-large: 48px;
     --font-medium: 28px;
@@ -82,8 +85,10 @@ p {
 .section__common {
     text-align: center;
     padding: 50px;
-    max-width: 1200px;
     margin: auto;
+}
+.section__container {
+    max-width: 1200px;
 }
 
 /* nav_bar */
@@ -142,6 +147,7 @@ p {
 }
 
 /* about */
+
 #about {
 }
 .about__majors {
@@ -169,13 +175,12 @@ p {
     transform: scale(1.1) rotate(-30deg);
     transition: var(--animation-duration);
 }
-
 .major__title,
 .major__description {
     font-size: var(--font-medium);
     font-weight: var(--weight-bold);
     margin: 12px 0;
-    color: var(--color-darkgray);
+    color: var(--color-darkgrey);
 }
 .major__description {
     font-size: var(--font-small);
@@ -197,4 +202,65 @@ p {
 }
 .job__logo {
     width: 50px;
+}
+
+/* skills */
+#skills {
+    background: rgb(233, 233, 153);
+}
+.skillset {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.skillset__left {
+    display: flex;
+    flex-basis: 60%;
+    flex-direction: column;
+    background: var(--color-darkgrey);
+    padding: 20px 40px;
+}
+.skillset__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 40%;
+}
+.tools {
+    background: var(--color-grey);
+    height: 60%;
+    padding: 20px;
+}
+.ect {
+    background: var(--color-lightgrey);
+    height: 40%;
+    padding: 20px;
+}
+.skill {
+    margin-bottom: 32px;
+}
+.skill_description {
+    display: flex;
+    justify-content: space-between;
+}
+.skill__bar {
+    background: var(--color-grey);
+    height: 3px;
+    width: 100%;
+}
+.skill__value {
+    height: 3px;
+    background: var(--color-orange);
+}
+.skillset__title {
+    color: var(--color-white);
+    font-weight: var(--weight-semi-bold);
+    font-size: var(--font-regular);
+}
+.skill_description,
+.tools__list,
+.etc__list {
+    color: var(--color-white);
+    font-weight: var(--weight-semi-bold);
+    font-size: var(--font-small);
 }
