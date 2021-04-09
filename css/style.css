@@ -6,6 +6,9 @@
     --color-pink: pink;
     --color-white: #ffffff;
     --color-darkpink: #d86d6d;
+    --color-skyblue: skyblue;
+    --color-darkgray: darkgray;
+    --color-lightblue: lightblue;
     /* Font Size  */
     --font-large: 48px;
     --font-medium: 28px;
@@ -18,6 +21,8 @@
     --weight-regular: 400;
     /* Size  */
     --size--border-radius: 4px;
+    /* Animation  */
+    --animation-duration: all 300ms ease;
 }
 
 /* Universal tags */
@@ -37,9 +42,9 @@ ul {
     list-style: none;
     padding-left: 0;
 }
-i {
+/* i {
     color: white;
-}
+} */
 button {
     background-color: transparent;
     cursor: pointer;
@@ -69,8 +74,16 @@ h3 {
 p {
     font-size: var(--font-regular);
     font-weight: var(--font-regular);
-    color: var(--color-black);
+    /* color: var(--color-black); */
     margin: 4px 0;
+}
+
+/* section common */
+.section__common {
+    text-align: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* nav_bar */
@@ -85,6 +98,7 @@ p {
 .navbar__logo {
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
+    color: var(--color-white);
 }
 .navbar__menu {
     display: flex;
@@ -106,7 +120,6 @@ p {
 #home {
     background: url("/imgs/background_img.png") center/cover no-repeat;
     padding: 40px;
-    text-align: center;
 }
 .home__avatar {
     width: 250px;
@@ -126,4 +139,62 @@ p {
     padding: 8px 12px;
     border-radius: var(--size--border-radius);
     border: 2px solid var(--color-white);
+}
+
+/* about */
+#about {
+}
+.about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0px;
+}
+.major {
+    margin: 0 20px;
+    display: flex;
+}
+.major__icon {
+    color: var(--color-skyblue);
+    font-size: 70px;
+    width: 170px;
+    height: 170px;
+    line-height: 170px;
+    margin: auto;
+    border: 1px solid var(--color-skyblue);
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+.major__icon:hover i {
+    color: var(--color-pink);
+    transform: scale(1.1) rotate(-30deg);
+    transition: var(--animation-duration);
+}
+
+.major__title,
+.major__description {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-bold);
+    margin: 12px 0;
+    color: var(--color-darkgray);
+}
+.major__description {
+    font-size: var(--font-small);
+    font-weight: var(--weight-regular);
+    margin: 12px 0;
+}
+.about__jobs,
+.job_decription {
+    color: var(--color-lightblue);
+}
+.about__jobs {
+    display: flex;
+    align-items: center;
+}
+.job_decription {
+    text-align: left;
+    margin-left: 16px;
+    font-size: var(--font-micro);
+}
+.job__logo {
+    width: 50px;
 }
