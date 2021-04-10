@@ -368,7 +368,7 @@ p {
 .testimonials {
     display: flex;
     flex-direction: column;
-    margin: 20px 40px;
+    margin: 40px;
 }
 .testimonial {
     display: flex;
@@ -386,15 +386,18 @@ p {
     height: 150px;
     border-radius: 50%;
     flex-basis: 10%;
+    max-width: 150px%;
+    max-height: 150px%;
 }
 .testimonial__speech-bubble {
+    padding: 18px;
     background-color: var(--color-white);
+    border-radius: var(--size--border-radius);
     flex-basis: 85%;
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: var(--size--border-radius);
 }
 .name a {
     color: var(--color-pink);
@@ -406,7 +409,7 @@ p {
 
 /* contact  */
 #contact {
-    padding: 40px 0;
+    padding: 0;
 }
 .contact {
     color: var(--color-white);
@@ -419,10 +422,16 @@ p {
 .contact h2 {
     color: var(--color-white);
     padding: 10px;
+    margin-top: 0;
 }
 .contact__link {
     padding: 10px;
     font-size: var(--font-large);
+}
+.contact__link i:hover {
+    transform: scale(1.1);
+    color: var(--color-orange);
+    transition: all 300ms ease-in;
 }
 .contact__rights {
     padding-bottom: 40px;
