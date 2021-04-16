@@ -33,7 +33,6 @@ navbarMenu.addEventListener('click', (event) =>{
 //handle scrolling when tapping on the 'Contact me' button
 
 const contactBtn = document.querySelector('.home__contact');
-
 contactBtn.addEventListener('click', (event) =>{
     const target = event.target;
     const link = target.dataset.link;
@@ -53,4 +52,20 @@ document.addEventListener('scroll', () =>{
     let scrollPersent;
     scrollPersent = (homeHeight - window.scrollY) / homeHeight;
     homeContainer.style.opacity = scrollPersent;
+});
+
+const arrowBtn = document.querySelector('.arrow__btn');
+arrowBtn.addEventListener('click', (event) =>{
+    scrollIntoView('#home');
+});
+document.addEventListener('scroll', () =>{
+    console.log(arrowBtn.style.pointerEvents);
+    if(window.scrollY > (homeHeight/2)){
+        arrowBtn.style.opacity = 1;
+        arrowBtn.style.pointerEvents = 'auto';
+    }
+    else{
+        arrowBtn.style.opacity = 0;
+        arrowBtn.style.pointerEvents = 'none';
+    }
 });

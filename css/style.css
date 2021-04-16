@@ -93,6 +93,21 @@ p {
     margin: auto;
 }
 
+/* Aroww_button */
+
+.arrow__btn {
+    position: fixed;
+    display: flex;
+    color: var(--color-orange);
+    z-index: 1;
+    font-size: 50px;
+    opacity: 1;
+    cursor: pointer;
+    top: 90%;
+    left: 90%;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
 /* nav_bar */
 
 #navbar {
