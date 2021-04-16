@@ -168,6 +168,7 @@ p {
 /* about */
 
 #about {
+    padding-top: 100px;
 }
 .about__majors {
     display: flex;
@@ -285,6 +286,9 @@ p {
 }
 
 /* Work  */
+#work {
+    padding-top: 120px;
+}
 .work__categories {
     justify-content: center;
     margin: 40px;
