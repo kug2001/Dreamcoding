@@ -30,7 +30,7 @@ navbarMenu.addEventListener('click', (event) =>{
     scrollIntoView(link);
 });
 
-//hande scrolling when tapping on the 'Contact me' button
+//handle scrolling when tapping on the 'Contact me' button
 
 const contactBtn = document.querySelector('.home__contact');
 
@@ -44,3 +44,13 @@ function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 };
+
+//Make home transparent when it is on the top
+
+const homeContainer = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () =>{
+    let scrollPersent;
+    scrollPersent = (homeHeight - window.scrollY) / homeHeight;
+    homeContainer.style.opacity = scrollPersent;
+});
