@@ -19,7 +19,6 @@ document.addEventListener('scroll', () =>{
 //handle scrolling when tapping on the navbar menu
 
 const navbarMenu = document.querySelector('.navbar__menu');
-
 navbarMenu.addEventListener('click', (event) =>{
     const target = event.target;
     const link = target.dataset.link;
@@ -68,4 +67,14 @@ document.addEventListener('scroll', () =>{
         arrowBtn.style.opacity = 0;
         arrowBtn.style.pointerEvents = 'none';
     }
+});
+
+//filtering work project
+
+const workprojectBtn = document.querySelector('.work__categories');
+workprojectBtn.addEventListener('click', (event) =>{
+    const target = event.target;
+    const link = target.dataset.link;
+    console.log(target.dataset.link);
+    console.log(event.target);
 });
