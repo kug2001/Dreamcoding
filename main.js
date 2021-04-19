@@ -16,6 +16,10 @@ document.addEventListener('scroll', () =>{
     }
 });
 
+//make navbar menu whe click is toggle button
+
+
+
 //handle scrolling when tapping on the navbar menu
 
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -26,7 +30,13 @@ navbarMenu.addEventListener('click', (event) =>{
     if (link == null){
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoView(link); 
+});
+
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+toggleBtn.addEventListener('click', (event) =>{
+    navbarMenu.classList.toggle('open');
 });
 
 
