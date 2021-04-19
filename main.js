@@ -19,6 +19,7 @@ document.addEventListener('scroll', () =>{
 //handle scrolling when tapping on the navbar menu
 
 const navbarMenu = document.querySelector('.navbar__menu');
+console.log(addEventListener);
 navbarMenu.addEventListener('click', (event) =>{
     const target = event.target;
     const link = target.dataset.link;
@@ -71,10 +72,30 @@ document.addEventListener('scroll', () =>{
 
 //filtering work project
 
-const workprojectBtn = document.querySelector('.work__categories');
-workprojectBtn.addEventListener('click', (event) =>{
-    const target = event.target;
-    const link = target.dataset.link;
-    console.log(target.dataset.link);
-    console.log(event.target);
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+workBtnContainer.addEventListener('click', (event) =>{
+    const filter = event.target.dataset.fliter || event.target.parentNode.dataset.fliter;
+    // console.log(filter);
+    if(filter == null){
+        return;
+    }
+    projectContainer.classList.add('anime-out');
+    setTimeout(() => {
+        projects.forEach((project) => {
+            const type = project.dataset.type;
+            // console.log(project.dataset.type);
+            if(filter === '*' || filter === type){
+                project.classList.remove('invisible');
+                console.log(type);
+            }
+            else{
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anime-out');
+    }, 300);
+    
 });
