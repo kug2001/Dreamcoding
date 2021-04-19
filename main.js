@@ -19,16 +19,16 @@ document.addEventListener('scroll', () =>{
 //handle scrolling when tapping on the navbar menu
 
 const navbarMenu = document.querySelector('.navbar__menu');
-console.log(addEventListener);
+
 navbarMenu.addEventListener('click', (event) =>{
     const target = event.target;
     const link = target.dataset.link;
-
     if (link == null){
         return;
     }
-    scrollIntoView(link);
+    scrollIntoView(link); 
 });
+
 
 //handle scrolling when tapping on the 'Contact me' button
 
@@ -42,6 +42,7 @@ contactBtn.addEventListener('click', (event) =>{
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
+    return scrollTo;
 };
 
 //Make home transparent when it is on the top
@@ -75,13 +76,20 @@ document.addEventListener('scroll', () =>{
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
-
+const categoryBtns = document.querySelectorAll('.category__btn');
 workBtnContainer.addEventListener('click', (event) =>{
     const filter = event.target.dataset.fliter || event.target.parentNode.dataset.fliter;
-    // console.log(filter);
+    console.log(filter);
     if(filter == null){
         return;
     }
+    
+
+    const active = document.querySelector('.category__btn.selected')
+    active.classList.remove('selected');
+    const target = 
+        event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+    target.classList.add('selected');
     projectContainer.classList.add('anime-out');
     setTimeout(() => {
         projects.forEach((project) => {
@@ -99,3 +107,6 @@ workBtnContainer.addEventListener('click', (event) =>{
     }, 300);
     
 });
+
+
+
