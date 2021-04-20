@@ -181,6 +181,9 @@ p {
     border-radius: var(--size--border-radius);
     border: 2px solid var(--color-white);
 }
+.home__contact:hover {
+    background-color: var(--color-orange);
+}
 
 /* about */
 
@@ -316,6 +319,7 @@ p {
     border: 1px solid var(--color-grey);
     border-radius: var(--size--border-radius);
     font-size: var(--font-regular);
+    position: relative;
 }
 .category__btn.selected,
 .category__btn:hover {
@@ -331,9 +335,9 @@ p {
     line-height: 24px;
     background: var(--color-orange);
     border-radius: 50%;
-    position: relative;
+    position: absolute;
     top: -20px;
-    left: 4px;
+    right: 18px;
     opacity: 0;
     transition: all var(--animation-duration) ease-in;
 }
@@ -491,6 +495,13 @@ p {
 /* For below 768px screen width */
 
 @media screen and (max-width: 768px) {
+    :root {
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
     .navbar__toggle-btn {
         display: block;
     }
@@ -514,6 +525,27 @@ p {
     .navbar__toggle-btn i:hover .navbar__menu {
         display: block;
     }
+    .navbar__toggle-btn {
+        top: 18px;
+        left: 85%;
+    }
+    #home {
+        padding-top: 100px;
+    }
+    #about {
+        padding-top: 30px;
+    }
+    #work {
+        padding-top: 30px;
+    }
+    .section__common {
+        padding: 16px;
+    }
+    .arrow__btn {
+        font-size: 30px;
+        top: 90%;
+        left: 90%;
+    }
     .about__majors {
         flex-direction: column;
     }
@@ -526,8 +558,29 @@ p {
     .project {
         flex-grow: 1;
     }
+    .testimonials {
+        margin: 10px;
+    }
+
+    .category__btn {
+        padding: 10px 15px;
+        font-size: var(--font-small);
+        width: 100%;
+    }
+    .work__categories {
+        margin: 10px;
+    }
+    .testimonial,
+    .testimonial:nth-child(2) {
+        flex-direction: column;
+    }
     .testimonial__avatar {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
+        justify-content: letf;
+        margin-bottom: 10px;
+    }
+    .contact__rights {
+        font-size: var(--font-micro);
     }
 }
