@@ -41,42 +41,6 @@ toggleBtn.addEventListener('click', (event) =>{
 
 
 
-//dsfdsfsdfsdfdsf
-
-
-// const option = {
-//     root: null, //viewport
-//     threshold: 1,
-// };
-// const sections = document.querySelectorAll('section');
-// const navbarItems = document.querySelectorAll('.navbar__menu__item');
-// const observer = new IntersectionObserver((entries, observe, option) => {
-//     entries.forEach(entry =>{
-//         const navbarItems = document.querySelectorAll('.navbar__menu__item');
-//         const type = entry.target.dataset.type;
-//         if(type == null){
-//             return;
-//         };
-//         navbarItems.forEach(menu => {
-//             const link = menu.dataset.link;
-//             if(link == null){
-//                 return;
-//             };
-//             if(entry.isIntersecting && type === link){
-//                 menu.classList.add('active');
-//             }
-//             else{
-//                 menu.classList.remove('active');
-//             }
-//         });
-        
-//     });
-// });
-
-// sections.forEach(section => observer.observe(section));
-
-//
-
 const sectionIds = [
     '#home',
     '#about',
@@ -92,7 +56,7 @@ let selectedNavItem = navItems[0];
 
 function selectNavItem(selected){
     selectedNavItem.classList.remove('active');
-    console.log(selected);
+    // console.log(selected);
     selectedNavItem = selected;
     selectedNavItem.classList.add('active');
 }
@@ -121,9 +85,9 @@ const observer = new IntersectionObserver(observerCallback, observerOption);
 sections.forEach(section => observer.observe(section));
 
 window.addEventListener('wheel', (event) => {
-    console.log(window.scrollY);
-    console.log(window.scrollY + window.innerHeight);
-    console.log(document.body.clientHeight);
+    // console.log(window.scrollY);
+    // console.log(window.scrollY + window.innerHeight);
+    // console.log(document.body.clientHeight);
     if(window.scrollY === 0){
         selectedNavIndex = 0;
         selectNavItem(navItems[selectedNavIndex]);
@@ -141,9 +105,9 @@ window.addEventListener('wheel', (event) => {
 
 const contactBtn = document.querySelector('.home__contact');
 contactBtn.addEventListener('click', (event) =>{
-    const target = event;
-    const link = target.dataset.link;
-    scrollIntoView(link);
+    console.log(event.target);
+    scrollIntoView('.contact');
+    selectNavItem(navItems[5]);
 });
 
 function scrollIntoView(selector){
@@ -165,6 +129,8 @@ document.addEventListener('scroll', () =>{
 const arrowBtn = document.querySelector('.arrow__btn');
 arrowBtn.addEventListener('click', (event) =>{
     scrollIntoView('#home');
+    selectNavItem(navItems[0]);
+
 });
 document.addEventListener('scroll', () =>{
     if(window.scrollY > (homeHeight/2)){
