@@ -152,6 +152,9 @@ p {
     color: var(--color-white);
     display: none;
 }
+.navbar__menu__item.active {
+    border: 1px solid var(--color-light-white);
+}
 
 /* Home  */
 #home {
